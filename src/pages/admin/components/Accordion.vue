@@ -1,4 +1,4 @@
-//Create里面有一个Sample，应该是这个
+<!-- //Create里面有一个Sample，是这个 -->
 <template>
   <div class="accordion">
     
