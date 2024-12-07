@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OnlineJudge</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="renderer" content="webkit"/>
+  <link rel="shortcut icon" href="/public/website/favicon.ico">
+
+  <link href="/static/css/loader.css" rel="stylesheet">
+  <script>
+    // IE 10 and earlier
+    if (window.navigator.userAgent.indexOf('MSIE ') > 0 &&
+      window.confirm('Your browser is not supported, click \'OK\' to update')) {
+      window.location = 'http://outdatedbrowser.com'
+    }
+  </script>
+  <style>
+    .filter-toggle {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      width: 40px; /* 调整按钮大小 */
+      height: 40px; /* 调整按钮大小 */
+      background-color: #808080; /* 灰色背景 */
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0.8;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .filter-toggle:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    .filter-toggle i {
+      font-size: 24px; /* 调整图标大小 */
+    }
+
+    /* 图片元素的样式 */
+    img {
+      transition: filter 0.3s ease;
+    }
+
+    /* 确保图片元素不受全局滤镜的影响 */
+   /* 确保图片元素不受全局滤镜的影响 */
+.no-filter {
+  filter: none !important;
+}
+
+/* 暗夜模式下的全局滤镜 */
+.dark-mode {
+  filter: invert(1) hue-rotate(180deg);
+}
+  </style>
+  <!-- 引入 Bootstrap Icons 的 CSS 文件 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+<div id="app-loader">
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square last"></div>
+  <div class="square clear"></div>
+  <div class="square"></div>
+  <div class="square last"></div>
+  <div class="square clear"></div>
+  <div class="square "></div>
+  <div class="square last"></div>
+</div>
+
+<div id="app">
+  <!-- 示例图片 -->
+  <img src="example.jpg" alt="Example Image">
+</div>
+<!-- built files will be auto injected -->
+
+<button class="filter-toggle" id="filterToggle" onclick="toggleFilter()">
+  <i id="filterToggleIcon" class="bi bi-moon"></i> <!-- 默认显示月亮图标 -->
+</button>
+
+<script>
+  function toggleFilter() {
+    const htmlElement = document.documentElement;
+    const filterToggleIcon = document.getElementById('filterToggleIcon');
+    if (filterToggleIcon.classList.contains('bi-moon')) {
+      htmlElement.classList.add('dark-mode');
+      // 切换到小太阳图标
+      filterToggleIcon.className = 'bi bi-brightness-high';
+    } else {
+      htmlElement.classList.remove('dark-mode');
+      // 切换到月亮图标
+      filterToggleIcon.className = 'bi bi-moon';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // 找到所有的图片元素
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+      // 为每个图片元素添加一个特定的类
+      img.classList.add('no-filter');
+    });
+  });
+</script>
+</body>
+</html>
