@@ -111,9 +111,9 @@
     releases: [],
     data: [
       { name: '郎若谷', studentId: '2351871', gender: '见习魔法师', image: require('./lrg.jpg') },
-      { name: '左知行', studentId: '2352469', gender: '超级管理员', image: require('./zzx.png')  },
-      { name: '祁浩哲', studentId: '2353941', gender: '超级管理员', image: require('./qhz.png') },
-      { name: '黄保翔', studentId: '2351753', gender: '超级管理员', image: require('./hbx.png')  },
+      { name: '左知行', studentId: '2352469', gender: '牛马小鼠鼠', image: require('./zzx.png') },
+      { name: '祁浩哲', studentId: '2353941', gender: '庄子养乌龟', image: require('./qhz.png') },
+      { name: '黄保翔', studentId: '2351753', gender: '野猪骑士王', image: require('./hbx.png') },
       { name: '黄唯轩', studentId: '2353123', gender: '个人练习生', image: require('./hwx.jpg') }
     ]
   };

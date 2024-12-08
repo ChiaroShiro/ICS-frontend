@@ -27,7 +27,8 @@
         <Pagination v-if="!isContest" key="page" :total="total" :page-size="limit" @on-change="getAnnouncementList"></Pagination>
       </template>
       <template v-else>
-        <div v-katex v-html="announcement.content" key="content" class="content-container markdown-body"></div>
+        <!-- <div>{{ announcement.content }}</div> -->
+        <div v-html="announcement.content" key="content" class="content-container markdown-body"></div>
       </template>
     </transition-group>
   </Panel>
@@ -81,6 +82,10 @@ export default {
     goAnnouncement(announcement) {
       this.announcement = announcement
       this.listVisible = false
+      console.log('vis: ', this.listVisible);
+      this.$nextTick(() => {
+        console.log('DOM更新完成', this.announcement.content);
+      });
     },
     goBack() {
       this.listVisible = true
