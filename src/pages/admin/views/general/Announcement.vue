@@ -1,4 +1,4 @@
-//后台设置那里面有一个公告管理，就是那个
+<!-- //后台设置那里面有一个公告管理，就是那个 -->
 <template>
   <div class="announcement view">
 

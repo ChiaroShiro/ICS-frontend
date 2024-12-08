@@ -2,7 +2,6 @@
   "name": "onlinejudge",
   "version": "2.7.6",
   "description": "onlinejudge front end",
-  "author": "zemal <rawidn@163.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",

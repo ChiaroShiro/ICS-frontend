@@ -1,4 +1,4 @@
-//这个是排名里面那个acm排名。
+<!-- //这个是排名里面那个acm排名。 -->
 <template>
   <Row type="flex" justify="space-around" class="background-container"> <!-- 为容器添加类名 -->
     <Col :span="22">

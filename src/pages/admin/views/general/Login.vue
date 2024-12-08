@@ -1,4 +1,4 @@
-//这个是那个登录界面的东西，这玩意不会干扰到别人
+<!-- //这个是那个登录界面的东西，这玩意不会干扰到别人 -->
 <template>
   <el-form :model="ruleForm2" :rules="rules2" ref="ruleForm2" label-position="left" label-width="0px"
       class="demo-ruleForm login-container">

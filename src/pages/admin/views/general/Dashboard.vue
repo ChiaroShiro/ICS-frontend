@@ -30,7 +30,7 @@
           </el-form>
         </div>
       </el-card>
-      <panel :title="$t('m.System_Overview')" v-if="isSuperAdmin">
+      <!-- <panel :title="$t('m.System_Overview')" v-if="isSuperAdmin">
         <p>{{$t('m.DashBoardJudge_Server')}}:  {{infoData.judge_server_count}}</p>
         <p>{{$t('m.HTTPS_Status')}}:
           <el-tag :type="https ? 'success' : 'danger'" size="small">
@@ -47,7 +47,7 @@
             {{cdn ? cdn : 'Not Use'}}
           </el-tag>
         </p>
-      </panel>
+      </panel> -->
     </el-col>
 
     <el-col :md="14" :lg="16" v-if="isSuperAdmin">

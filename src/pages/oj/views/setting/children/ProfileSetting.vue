@@ -1,4 +1,4 @@
-//我的设置 个人账户信息
+<!-- //我的设置 个人账户信息 -->
 <template>
   <div class="setting-main">
     <div class="section-title">{{$t('m.Avatar_Setting')}}</div>

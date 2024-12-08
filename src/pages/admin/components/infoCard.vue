@@ -1,4 +1,4 @@
-//dashboard里面那个框，右边那个
+<!-- //dashboard里面那个框，右边那个 -->
 <template>
   <el-card :body-style="{padding: 0, height: '100%'}" class="info-card back" >
    

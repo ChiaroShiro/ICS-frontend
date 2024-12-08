@@ -1,10 +1,10 @@
-//后台管理，常用设置，判题服务器
+<!-- //后台管理，常用设置，判题服务器 -->
 <template>
   <div class="view">
 
-    <Panel :title="$t('m.Judge_Server_Token')">
+    <!-- <Panel :title="$t('m.Judge_Server_Token')">
       <code>{{ token }}</code>
-    </Panel>
+    </Panel> -->
     <Panel :title="$t('m.Judge_Server_Info')">
       <el-table
         :data="servers"

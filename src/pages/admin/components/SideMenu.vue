@@ -10,14 +10,14 @@
       <el-menu-item index="/user">{{$t('m.User')}}</el-menu-item>
       <el-menu-item index="/announcement">{{$t('m.Announcement')}}</el-menu-item>
       <!-- <el-menu-item index="/conf">{{$t('m.System_Config')}}</el-menu-item> -->
-      <el-menu-item index="/judge-server">{{$t('m.Judge_Server')}}</el-menu-item>
-      <el-menu-item index="/prune-test-case">{{$t('m.Prune_Test_Case')}}</el-menu-item>
+      <!-- <el-menu-item index="/judge-server">{{$t('m.Judge_Server')}}</el-menu-item> -->
+      <!-- <el-menu-item index="/prune-test-case">{{$t('m.Prune_Test_Case')}}</el-menu-item> -->
     </el-submenu >
     <el-submenu index="problem" v-if="hasProblemPermission">
       <template slot="title"><i class="el-icon-fa-bars"></i>{{$t('m.Problem')}}</template>
       <el-menu-item index="/problems">{{$t('m.Problem_List')}}</el-menu-item>
       <el-menu-item index="/problem/create">{{$t('m.Create_Problem')}}</el-menu-item>
-      <el-menu-item index="/problem/batch_ops">{{$t('m.Export_Import_Problem')}}</el-menu-item>
+      <!-- <el-menu-item index="/problem/batch_ops">{{$t('m.Export_Import_Problem')}}</el-menu-item> -->
 
     </el-submenu>
     <el-submenu index="contest">
@@ -51,20 +51,22 @@
 
 
 .el-menu-item{
-  background-color: rgba(0, 255, 255, 0.7)!important;
+  background-color: rgba(236, 223, 238, 0.3)!important;
   font-weight: bold;
-  font-size: 13px !important /* 设置字号为原来的1.2倍 */
+  font-size: 13px !important; /* 设置字号为原来的1.2倍 */
+  color: lightcoral; /* 设置字体颜色为淡红色 */
 }
- .el-submenu {
-  background-color:rgba(0, 255, 255, 0.7);
+.el-submenu {
+  background-color:rgba(221, 154, 230, 0.3);
   font-weight: bold;
-  font-size: 50px !important/* 设置字号为原来的1.2倍 */
-
+  font-size: 50px !important; /* 设置字号为原来的1.2倍 */
+  color: lightcoral; /* 设置字体颜色为淡红色 */
 }
 .ahead {
-  background-color: rgba(0, 255, 255, 0.7)!important;  /*设置背景颜色并提高优先级 */
+  background-color: rgba(221, 154, 230, 0.3)!important;  /*设置背景颜色并提高优先级 */
   font-weight: bold !important; /* 设置字体加粗并提高优先级 */
-  font-size: 100% !important /* 设置字号为原来的1.2倍 */
+  font-size: 100% !important; /* 设置字号为原来的1.2倍 */
+  color: lightcoral; /* 设置字体颜色为淡红色 */
 }
 
   .vertical_menu {

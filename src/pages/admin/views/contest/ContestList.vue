@@ -1,4 +1,4 @@
-/***root 后台管理 比赛练习 比赛列表 */
+<!-- /***root 后台管理 比赛练习 比赛列表 */ -->
 <template>
   <div class="view">
 

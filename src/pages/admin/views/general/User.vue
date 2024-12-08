@@ -1,4 +1,4 @@
-//后台管理，常用设置，用户管理
+<!-- //后台管理，常用设置，用户管理 -->
 <template>
   <div class="view">
 
@@ -69,7 +69,7 @@
       </div>
     </Panel>
 
-    <Panel>
+    <!-- <Panel>
       <span slot="title">{{$t('m.Import_User')}}
         <el-popover placement="right" trigger="hover">
           <p>Only support csv file without headers, check the <a
@@ -173,7 +173,7 @@
           </span>
         </el-form-item>
       </el-form>
-    </Panel>
+    </Panel> -->
     <!--对话框-->
     <el-dialog :title="$t('m.User_Info')" :visible.sync="showUserDialog" :close-on-click-modal="false">
       <el-form :model="user" label-width="120px" label-position="left">

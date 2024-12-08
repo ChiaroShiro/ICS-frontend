@@ -1,4 +1,4 @@
-//我的设置，安全设置
+<!-- //我的设置，安全设置 -->
 <template>
   <div class="setting-main">
 

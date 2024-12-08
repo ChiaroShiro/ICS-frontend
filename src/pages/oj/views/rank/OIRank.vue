@@ -1,4 +1,4 @@
-//这是那个oi排名
+<!-- //这是那个oi排名 -->
 <template>
    <Row type="flex" justify="space-around" class="background-container"> <!-- 为容器添加类名 -->
     <Col :span="22">
