@@ -1,4 +1,3 @@
-//这个应该是更改密码那个界面吧，我猜这个也不需要。
 <template>
   <Panel :padding="30" class="container">
     <div slot="title" class="center">{{$t('m.Reset_Password')}}</div>
