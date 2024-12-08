@@ -39,14 +39,14 @@
 <style scoped lang="less">
 
 .back
-{ background-color: rgba(0, 255, 255, 0.3); 
+{ background-color: rgba(199, 159, 15, 0.3); 
   transition: background-color 0.3s; 
   position: relative; 
   overflow: hidden; 
 }
 
 .back:hover
-{ background-color: rgba(60, 255, 0, 0.3); 
+{ background-color: rgba(220, 222, 224, 0.3); 
 }
 
 .back::after{ content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200%; height: 200%; background-color: rgba(255, 255, 255, 0.3); border-radius: 50%; transition: all 0.5s; pointer-events: none; }

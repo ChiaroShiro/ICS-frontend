@@ -53,20 +53,17 @@
 .el-menu-item{
   background-color: rgba(0, 255, 255, 0.7)!important;
   font-weight: bold;
-  font-family: 'YourArtisticFont', cursive;
   font-size: 13px !important /* 设置字号为原来的1.2倍 */
 }
  .el-submenu {
   background-color:rgba(0, 255, 255, 0.7);
   font-weight: bold;
-  font-family: 'YourArtisticFont', cursive;
   font-size: 50px !important/* 设置字号为原来的1.2倍 */
 
 }
 .ahead {
   background-color: rgba(0, 255, 255, 0.7)!important;  /*设置背景颜色并提高优先级 */
   font-weight: bold !important; /* 设置字体加粗并提高优先级 */
-  font-family: 'YourArtisticFont', cursive !important; /* 设置字体样式并提高优先级 */
   font-size: 100% !important /* 设置字号为原来的1.2倍 */
 }
 

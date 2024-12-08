@@ -100,10 +100,7 @@ export default {
 
 <style scoped lang="less">
 .announcement-panel {
-    background-image: url('./background.jpg'); /* 替换为您的图片路径 */
-    background-size: cover; /* 图片覆盖整个元素 */
-    background-position: center; /* 图片居中显示 */
-    background-repeat: no-repeat; /* 不重复图片 */
+    background-color: white;
     padding: 20px; /* 确保图片效果良好，增加内边距 */
     border-radius: 8px; /* 可选：为卡片添加圆角 */
     filter: none ; 
