@@ -59,28 +59,27 @@
         <info-card color="#409EFF" icon="el-icon-fa-trophy" message="Recent Contests" class="info-item"
                    :value="infoData.recent_contest_count"></info-card>
       </div>
-      <panel style="margin-top: 5px">
-        <span slot="title" v-loading="loadingReleases">Hello
-        </span>
 
-        <!-- <el-collapse v-model="activeNames" v-for="(release, index) of releases" :key="'release' + index">
-          <el-collapse-item :name="index+1">
-            <template slot="title">
-              <div v-if="release.new_version">{{release.title}}
-                <el-tag size="mini" type="success">New Version</el-tag>
-              </div>
-              <span v-else>{{release.title}}</span>
-            </template>
-            <p>Level: {{release.level}}</p>
-            <p>Details: </p>
-            <div class="release-body">
-              <ul v-for="detail in release.details" :key="detail">
-                <li v-html="detail"></li>
-              </ul>
-            </div>
-          </el-collapse-item>
-        </el-collapse> -->
-      </panel>
+  <panel style="margin-top: 5px">
+    <span slot="title" v-loading="loadingReleases">制作小组基础信息
+      <el-popover placement="right" trigger="hover">
+        <p>Please upgrade to the latest version to enjoy the new features.</p>
+      </el-popover>
+    </span>
+
+    <el-collapse v-model="activeNames">
+      <div v-for="(item, index) in data" :key="index" style="display: flex; align-items: center; border-bottom: 1px solid #ccc; padding: 10px;">
+        <img :src="item.image" alt="Image" style="width: 100px; height: 100px; margin-right: 20px;">
+        <div>
+          <p><strong>姓名 ：</strong> {{ item.name }}</p>
+          <p><strong>ID   ：</strong> {{ item.studentId }}</p>
+          <p><strong>身份 ：</strong> {{ item.gender }}</p>
+        </div>
+      </div>
+    </el-collapse>
+  </panel>
+
+     
     </el-col>
   </el-row>
 </template>
@@ -97,21 +96,28 @@
     components: {
       InfoCard
     },
-    data () {
-      return {
-        infoData: {
-          user_count: 0,
-          recent_contest_count: 0,
-          today_submission_count: 0,
-          judge_server_count: 0,
-          env: {}
-        },
-        activeNames: [1],
-        session: {},
-        loadingReleases: true,
-        releases: []
-      }
+ data() {
+  return {
+    infoData: {
+      user_count: 0,
+      recent_contest_count: 0,
+      today_submission_count: 0,
+      judge_server_count: 0,
+      env: {}
     },
+    activeNames: [1],
+    session: {},
+    loadingReleases: true,
+    releases: [],
+    data: [
+      { name: '郎若谷', studentId: '2351871', gender: '见习魔法师', image: require('./lrg.jpg') },
+      { name: '左知行', studentId: '2352469', gender: '超级管理员', image: require('./zzx.png')  },
+      { name: '祁浩哲', studentId: '2353941', gender: '超级管理员', image: require('./qhz.png') },
+      { name: '黄保翔', studentId: '2351753', gender: '超级管理员', image: require('./hbx.png')  },
+      { name: '黄唯轩', studentId: '2353123', gender: '个人练习生', image: require('./hwx.jpg') }
+    ]
+  };
+},
     mounted () {
       api.getDashboardInfo().then(resp => {
         this.infoData = resp.data.data
