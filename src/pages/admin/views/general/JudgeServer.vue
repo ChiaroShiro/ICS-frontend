@@ -1,10 +1,10 @@
 <!-- //后台管理，常用设置，判题服务器 -->
 <template>
-  <div class="view">
+  <!-- <div class="view">
 
-    <!-- <Panel :title="$t('m.Judge_Server_Token')">
+    <Panel :title="$t('m.Judge_Server_Token')">
       <code>{{ token }}</code>
-    </Panel> -->
+    </Panel>
     <Panel :title="$t('m.Judge_Server_Info')">
       <el-table
         :data="servers"
@@ -69,57 +69,57 @@
         </el-table-column>
       </el-table>
     </Panel>
-  </div>
+  </div> -->
 </template>
 
 <script>
-  import api from '../../api.js'
+  // import api from '../../api.js'
 
-  export default {
-    name: 'JudgeServer',
-    data () {
-      return {
-        servers: [],
-        token: '',
-        intervalId: -1
-      }
-    },
-    mounted () {
-      this.refreshJudgeServerList()
-      this.intervalId = setInterval(() => {
-        this.refreshJudgeServerList()
-      }, 5000)
-    },
-    methods: {
-      refreshJudgeServerList () {
-        api.getJudgeServer().then(res => {
-          this.servers = res.data.data.servers
-          this.token = res.data.data.token
-        })
-      },
-      deleteJudgeServer (hostname) {
-        this.$confirm('If you delete this judge server, it can\'t be used until next heartbeat', 'Warning', {
-          confirmButtonText: 'Delete',
-          cancelButtonText: 'Cancel',
-          type: 'warning'
-        }).then(() => {
-          api.deleteJudgeServer(hostname).then(res =>
-            this.refreshJudgeServerList()
-          )
-        }).catch(() => {
-        })
-      },
-      handleDisabledSwitch (id, value) {
-        let data = {
-          id,
-          is_disabled: value
-        }
-        api.updateJudgeServer(data).catch(() => {})
-      }
-    },
-    beforeRouteLeave (to, from, next) {
-      clearInterval(this.intervalId)
-      next()
-    }
-  }
+  // export default {
+  //   name: 'JudgeServer',
+  //   data () {
+  //     return {
+  //       servers: [],
+  //       token: '',
+  //       intervalId: -1
+  //     }
+  //   },
+  //   mounted () {
+  //     this.refreshJudgeServerList()
+  //     this.intervalId = setInterval(() => {
+  //       this.refreshJudgeServerList()
+  //     }, 5000)
+  //   },
+  //   methods: {
+  //     refreshJudgeServerList () {
+  //       api.getJudgeServer().then(res => {
+  //         this.servers = res.data.data.servers
+  //         this.token = res.data.data.token
+  //       })
+  //     },
+  //     deleteJudgeServer (hostname) {
+  //       this.$confirm('If you delete this judge server, it can\'t be used until next heartbeat', 'Warning', {
+  //         confirmButtonText: 'Delete',
+  //         cancelButtonText: 'Cancel',
+  //         type: 'warning'
+  //       }).then(() => {
+  //         api.deleteJudgeServer(hostname).then(res =>
+  //           this.refreshJudgeServerList()
+  //         )
+  //       }).catch(() => {
+  //       })
+  //     },
+  //     handleDisabledSwitch (id, value) {
+  //       let data = {
+  //         id,
+  //         is_disabled: value
+  //       }
+  //       api.updateJudgeServer(data).catch(() => {})
+  //     }
+  //   },
+  //   beforeRouteLeave (to, from, next) {
+  //     clearInterval(this.intervalId)
+  //     next()
+  //   }
+  // }
 </script>

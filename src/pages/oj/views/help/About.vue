@@ -1,6 +1,6 @@
 <!-- //这两个是那个关于的问题，也没啥问题 -->
 <template>
-  <div>
+  <!-- <div>
     <panel class="container">
       <div slot="title">{{$t('m.Compiler')}} & {{$t('m.Judger')}}</div>
       <div class="content markdown-body">
@@ -35,7 +35,7 @@
       </div>
     </panel>
 
-  </div>
+  </div> -->
 </template>
 
 <script>

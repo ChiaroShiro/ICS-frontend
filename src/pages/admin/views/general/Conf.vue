@@ -1,6 +1,6 @@
 <!-- //后台管理 常用设置 系统配置，负责这个页面的 -->
 <template>
-  <div class="view">
+  <!-- <div class="view">
 
     <Panel :title="$t('m.SMTP_Config')">
       <el-form label-position="left" label-width="70px" :model="smtp">
@@ -87,76 +87,76 @@
       </el-form>
       <save @click.native="saveWebsiteConfig"></save>
     </Panel>
-  </div>
+  </div> -->
 </template>
 
 <script>
-  import api from '../../api.js'
+  // import api from '../../api.js'
 
-  export default {
-    name: 'Conf',
-    data () {
-      return {
-        init: false,
-        saved: false,
-        loadingBtnTest: false,
-        smtp: {
-          server: 'smtp.example.com',
-          port: 25,
-          password: '',
-          email: 'email@example.com',
-          tls: true
-        },
-        websiteConfig: {}
-      }
-    },
-    mounted () {
-      api.getSMTPConfig().then(res => {
-        if (res.data.data) {
-          this.smtp = res.data.data
-        } else {
-          this.init = true
-          this.$warning('Please setup SMTP config at first')
-        }
-      })
-      api.getWebsiteConfig().then(res => {
-        this.websiteConfig = res.data.data
-      }).catch(() => {
-      })
-    },
-    methods: {
-      saveSMTPConfig () {
-        if (!this.init) {
-          api.editSMTPConfig(this.smtp).then(() => {
-            this.saved = true
-          }, () => {
-          })
-        } else {
-          api.createSMTPConfig(this.smtp).then(() => {
-            this.saved = true
-          }, () => {
-          })
-        }
-      },
-      testSMTPConfig () {
-        this.$prompt('Please input your email', '', {
-          inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
-          inputErrorMessage: 'Error email format'
-        }).then(({value}) => {
-          this.loadingBtnTest = true
-          api.testSMTPConfig(value).then(() => {
-            this.loadingBtnTest = false
-          }, () => {
-            this.loadingBtnTest = false
-          })
-        }).catch(() => {
-        })
-      },
-      saveWebsiteConfig () {
-        api.editWebsiteConfig(this.websiteConfig).then(() => {
-        }).catch(() => {
-        })
-      }
-    }
-  }
+  // export default {
+  //   name: 'Conf',
+  //   data () {
+  //     return {
+  //       init: false,
+  //       saved: false,
+  //       loadingBtnTest: false,
+  //       smtp: {
+  //         server: 'smtp.example.com',
+  //         port: 25,
+  //         password: '',
+  //         email: 'email@example.com',
+  //         tls: true
+  //       },
+  //       websiteConfig: {}
+  //     }
+  //   },
+  //   mounted () {
+  //     api.getSMTPConfig().then(res => {
+  //       if (res.data.data) {
+  //         this.smtp = res.data.data
+  //       } else {
+  //         this.init = true
+  //         this.$warning('Please setup SMTP config at first')
+  //       }
+  //     })
+  //     api.getWebsiteConfig().then(res => {
+  //       this.websiteConfig = res.data.data
+  //     }).catch(() => {
+  //     })
+  //   },
+  //   methods: {
+  //     saveSMTPConfig () {
+  //       if (!this.init) {
+  //         api.editSMTPConfig(this.smtp).then(() => {
+  //           this.saved = true
+  //         }, () => {
+  //         })
+  //       } else {
+  //         api.createSMTPConfig(this.smtp).then(() => {
+  //           this.saved = true
+  //         }, () => {
+  //         })
+  //       }
+  //     },
+  //     testSMTPConfig () {
+  //       this.$prompt('Please input your email', '', {
+  //         inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
+  //         inputErrorMessage: 'Error email format'
+  //       }).then(({value}) => {
+  //         this.loadingBtnTest = true
+  //         api.testSMTPConfig(value).then(() => {
+  //           this.loadingBtnTest = false
+  //         }, () => {
+  //           this.loadingBtnTest = false
+  //         })
+  //       }).catch(() => {
+  //       })
+  //     },
+  //     saveWebsiteConfig () {
+  //       api.editWebsiteConfig(this.websiteConfig).then(() => {
+  //       }).catch(() => {
+  //       })
+  //     }
+  //   }
+  // }
 </script>

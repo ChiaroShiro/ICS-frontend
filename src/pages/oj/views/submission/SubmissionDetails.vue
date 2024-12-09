@@ -1,4 +1,3 @@
-<!-- //就是理论上这个是负责我的提交那里。但是问题在于现在并没有需要提交的数据。所以这个就不需要修改了。pray的时候也没有这么长的时间。 -->
 <template>
   <Row type="flex" justify="space-around">
 

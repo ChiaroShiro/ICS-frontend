@@ -1,5 +1,5 @@
 <template>
-  <panel>
+  <!-- <panel>
     <div slot="title">{{$t('m.Frequently_Asked_Questions')}}</div>
     <div class="content markdown-body">
       <ul>
@@ -29,7 +29,7 @@
         </li>
       </ul>
     </div>
-  </panel>
+  </panel> -->
 </template>
 
 <script>

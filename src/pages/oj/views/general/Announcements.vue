@@ -82,10 +82,10 @@ export default {
     goAnnouncement(announcement) {
       this.announcement = announcement
       this.listVisible = false
-      console.log('vis: ', this.listVisible);
-      this.$nextTick(() => {
-        console.log('DOM更新完成', this.announcement.content);
-      });
+      // console.log('vis: ', this.listVisible);
+      // this.$nextTick(() => {
+      //   console.log('DOM更新完成', this.announcement.content);
+      // });
     },
     goBack() {
       this.listVisible = true

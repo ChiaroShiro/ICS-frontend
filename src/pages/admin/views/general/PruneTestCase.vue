@@ -1,6 +1,6 @@
 <!-- //后台管理，常用设置，测试用例 -->
 <template>
-  <div>
+  <!-- <div>
     
     <panel>
       <span slot="title">{{$t('m.Test_Case_Prune_Test_Case')}}
@@ -37,47 +37,47 @@
         </el-button>
       </div>
     </panel>
-  </div>
+  </div> -->
 </template>
 
 <script>
-  import api from '@admin/api'
-  import moment from 'moment'
+  // import api from '@admin/api'
+  // import moment from 'moment'
 
-  export default {
-    name: 'prune-test-case',
-    data () {
-      return {
-        data: [],
-        loading: false
-      }
-    },
-    mounted () {
-      this.init()
-    },
-    methods: {
-      init () {
-        api.getInvalidTestCaseList().then(resp => {
-          this.data = resp.data.data
-        }, () => {
-        })
-      },
-      deleteTestCase (id) {
-        if (!id) {
-          this.loading = true
-        }
-        api.pruneTestCase(id).then(resp => {
-          this.loading = false
-          this.init()
-        })
-      }
-    },
-    filters: {
-      timestampFormat (value) {
-        return moment.unix(value).format('YYYY-M-D  HH:mm:ss')
-      }
-    }
-  }
+  // export default {
+  //   name: 'prune-test-case',
+  //   data () {
+  //     return {
+  //       data: [],
+  //       loading: false
+  //     }
+  //   },
+  //   mounted () {
+  //     this.init()
+  //   },
+  //   methods: {
+  //     init () {
+  //       api.getInvalidTestCaseList().then(resp => {
+  //         this.data = resp.data.data
+  //       }, () => {
+  //       })
+  //     },
+  //     deleteTestCase (id) {
+  //       if (!id) {
+  //         this.loading = true
+  //       }
+  //       api.pruneTestCase(id).then(resp => {
+  //         this.loading = false
+  //         this.init()
+  //       })
+  //     }
+  //   },
+  //   filters: {
+  //     timestampFormat (value) {
+  //       return moment.unix(value).format('YYYY-M-D  HH:mm:ss')
+  //     }
+  //   }
+  // }
 </script>
 
 <style>

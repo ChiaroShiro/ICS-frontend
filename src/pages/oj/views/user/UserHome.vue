@@ -107,12 +107,12 @@
       goProblem (problemID) {
         this.$router.push({name: 'problem-details', params: {problemID: problemID}})
       },
-      freshProblemDisplayID () {
-        api.freshDisplayID().then(res => {
-          this.$success('Update successfully')
-          this.init()
-        })
-      }
+      // freshProblemDisplayID () {
+      //   api.freshDisplayID().then(res => {
+      //     this.$success('Update successfully')
+      //     this.init()
+      //   })
+      // }
     },
     computed: {
       refreshVisible () {

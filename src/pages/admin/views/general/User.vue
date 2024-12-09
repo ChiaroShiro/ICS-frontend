@@ -345,26 +345,26 @@
       handleSelectionChange (val) {
         this.selectedUsers = val
       },
-      generateUser () {
-        this.$refs['formGenerateUser'].validate((valid) => {
-          if (!valid) {
-            this.$error('Please validate the error fields')
-            return
-          }
-          this.loadingGenerate = true
-          let data = Object.assign({}, this.formGenerateUser)
-          api.generateUser(data).then(res => {
-            this.loadingGenerate = false
-            let url = '/admin/generate_user?file_id=' + res.data.data.file_id
-            utils.downloadFile(url).then(() => {
-              this.$alert('All users created successfully, the users sheets have downloaded to your disk.', 'Notice')
-            })
-            this.getUserList(1)
-          }).catch(() => {
-            this.loadingGenerate = false
-          })
-        })
-      },
+      // generateUser () {
+      //   this.$refs['formGenerateUser'].validate((valid) => {
+      //     if (!valid) {
+      //       this.$error('Please validate the error fields')
+      //       return
+      //     }
+      //     this.loadingGenerate = true
+      //     let data = Object.assign({}, this.formGenerateUser)
+      //     api.generateUser(data).then(res => {
+      //       this.loadingGenerate = false
+      //       let url = '/admin/generate_user?file_id=' + res.data.data.file_id
+      //       utils.downloadFile(url).then(() => {
+      //         this.$alert('All users created successfully, the users sheets have downloaded to your disk.', 'Notice')
+      //       })
+      //       this.getUserList(1)
+      //     }).catch(() => {
+      //       this.loadingGenerate = false
+      //     })
+      //   })
+      // },
       handleUsersCSV (file) {
         papa.parse(file, {
           complete: (results) => {
@@ -384,16 +384,16 @@
           }
         })
       },
-      handleUsersUpload () {
-        api.importUsers(this.uploadUsers).then(res => {
-          this.getUserList(1)
-          this.handleResetData()
-        }).catch(() => {
-        })
-      },
-      handleResetData () {
-        this.uploadUsers = []
-      }
+      // handleUsersUpload () {
+      //   api.importUsers(this.uploadUsers).then(res => {
+      //     this.getUserList(1)
+      //     this.handleResetData()
+      //   }).catch(() => {
+      //   })
+      // },
+      // handleResetData () {
+      //   this.uploadUsers = []
+      // }
     },
     computed: {
       selectedUserIDs () {
