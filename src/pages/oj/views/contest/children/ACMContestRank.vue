@@ -12,7 +12,6 @@
             <span>{{$t('m.Chart')}}</span>
             <i-switch v-model="showChart"></i-switch>
           </p>
-          <!-- <p>adfsdsfdsfdfdsffddsf/p> -->
           <p>
             <span>{{$t('m.Auto_Refresh')}}(10s)</span>
             <i-switch :disabled="refreshDisabled" @on-change="handleAutoRefresh"></i-switch>

@@ -27,7 +27,6 @@
         <Pagination v-if="!isContest" key="page" :total="total" :page-size="limit" @on-change="getAnnouncementList"></Pagination>
       </template>
       <template v-else>
-        <!-- <div>{{ announcement.content }}</div> -->
         <div v-html="announcement.content" key="content" class="content-container markdown-body"></div>
       </template>
     </transition-group>

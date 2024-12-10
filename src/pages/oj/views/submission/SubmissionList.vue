@@ -1,4 +1,3 @@
-<!-- //这个也一样。貌似不用修改。 -->
 <template>
   <div class="flex-container">
     <div id="main">

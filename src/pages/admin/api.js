@@ -85,74 +85,12 @@ export default {
       }
     })
   },
-  // importUsers (users) {
-  //   return ajax('admin/user', 'post', {
-  //     data: {
-  //       users
-  //     }
-  //   })
-  // },
-  // generateUser (data) {
-  //   return ajax('admin/generate_user', 'post', {
-  //     data
-  //   })
-  // },
   getLanguages () {
     return ajax('languages', 'get')
   },
-  // getSMTPConfig () {
-  //   return ajax('admin/smtp', 'get')
-  // },
-  // createSMTPConfig (data) {
-  //   return ajax('admin/smtp', 'post', {
-  //     data
-  //   })
-  // },
-  // editSMTPConfig (data) {
-  //   return ajax('admin/smtp', 'put', {
-  //     data
-  //   })
-  // },
-  // testSMTPConfig (email) {
-  //   return ajax('admin/smtp_test', 'post', {
-  //     data: {
-  //       email
-  //     }
-  //   })
-  // },
   getWebsiteConfig () {
     return ajax('admin/website', 'get')
   },
-  // editWebsiteConfig (data) {
-  //   return ajax('admin/website', 'post', {
-  //     data
-  //   })
-  // },
-  // getJudgeServer () {
-  //   return ajax('admin/judge_server', 'get')
-  // },
-  // deleteJudgeServer (hostname) {
-  //   return ajax('admin/judge_server', 'delete', {
-  //     params: {
-  //       hostname: hostname
-  //     }
-  //   })
-  // },
-  // updateJudgeServer (data) {
-  //   return ajax('admin/judge_server', 'put', {
-  //     data
-  //   })
-  // },
-  // getInvalidTestCaseList () {
-  //   return ajax('admin/prune_test_case', 'get')
-  // },
-  // pruneTestCase (id) {
-  //   return ajax('admin/prune_test_case', 'delete', {
-  //     params: {
-  //       id
-  //     }
-  //   })
-  // },
   createContest (data) {
     return ajax('admin/contest', 'post', {
       data
@@ -292,11 +230,6 @@ export default {
   getSessions () {
     return ajax('sessions', 'get')
   },
-  // exportProblems (data) {
-  //   return ajax('export_problem', 'post', {
-  //     data
-  //   })
-  // }
 }
 
 /**

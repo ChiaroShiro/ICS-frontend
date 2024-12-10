@@ -7,7 +7,6 @@
         <div id="problem-content" class="markdown-body" v-katex>
           <p class="title">{{$t('m.Description')}}</p>
           <p class="content" v-html=problem.description></p>
-          <!-- {{$t('m.music')}} -->
           <p class="title">{{$t('m.Input')}} <span v-if="problem.io_mode.io_mode=='File IO'">({{$t('m.FromFile')}}: {{ problem.io_mode.input }})</span></p>
           <p class="content" v-html=problem.input_description></p>
 

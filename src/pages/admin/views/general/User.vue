@@ -69,111 +69,6 @@
       </div>
     </Panel>
 
-    <!-- <Panel>
-      <span slot="title">{{$t('m.Import_User')}}
-        <el-popover placement="right" trigger="hover">
-          <p>Only support csv file without headers, check the <a
-            href="http://docs.onlinejudge.me/#/onlinejudge/guide/import_users">link</a> for details</p>
-          <i slot="reference" class="el-icon-fa-question-circle import-user-icon"></i>
-        </el-popover>
-      </span>
-      <el-upload v-if="!uploadUsers.length"
-                 action=""
-                 :show-file-list="false"
-                 accept=".csv"
-                 :before-upload="handleUsersCSV">
-        <el-button size="small" icon="el-icon-fa-upload" type="primary">Choose File</el-button>
-      </el-upload>
-      <template v-else>
-        <el-table :data="uploadUsersPage">
-          <el-table-column label="Username">
-            <template slot-scope="{row}">
-              {{row[0]}}
-            </template>
-          </el-table-column>
-          <el-table-column label="Password">
-            <template slot-scope="{row}">
-              {{row[1]}}
-            </template>
-          </el-table-column>
-          <el-table-column label="Email">
-            <template slot-scope="{row}">
-              {{row[2]}}
-            </template>
-          </el-table-column>
-          <el-table-column label="RealName">
-            <template slot-scope="{row}">
-              {{row[3]}}
-            </template>
-          </el-table-column>
-        </el-table>
-        <div class="panel-options">
-          <el-button type="primary" size="small"
-                     icon="el-icon-fa-upload"
-                     @click="handleUsersUpload">Import All
-          </el-button>
-          <el-button type="warning" size="small"
-                     icon="el-icon-fa-undo"
-                     @click="handleResetData">Reset Data
-          </el-button>
-          <el-pagination
-            class="page"
-            layout="prev, pager, next"
-            :page-size="uploadUsersPageSize"
-            :current-page.sync="uploadUsersCurrentPage"
-            :total="uploadUsers.length">
-          </el-pagination>
-        </div>
-      </template>
-    </Panel>
-
-    <Panel :title="$t('m.Generate_User')">
-      <el-form :model="formGenerateUser" ref="formGenerateUser">
-        <el-row type="flex" justify="space-between">
-          <el-col :span="4">
-            <el-form-item label="Prefix" prop="prefix">
-              <el-input v-model="formGenerateUser.prefix" placeholder="Prefix"></el-input>
-            </el-form-item>
-          </el-col>
-          <el-col :span="4">
-            <el-form-item label="Suffix" prop="suffix">
-              <el-input v-model="formGenerateUser.suffix" placeholder="Suffix"></el-input>
-            </el-form-item>
-          </el-col>
-          <el-col :span="4">
-            <el-form-item label="Start Number" prop="number_from" required>
-              <el-input-number v-model="formGenerateUser.number_from" style="width: 100%"></el-input-number>
-            </el-form-item>
-          </el-col>
-          <el-col :span="4">
-            <el-form-item label="End Number" prop="number_to" required>
-              <el-input-number v-model="formGenerateUser.number_to" style="width: 100%"></el-input-number>
-            </el-form-item>
-          </el-col>
-          <el-col :span="4">
-            <el-form-item label="Password Length" prop="password_length" required>
-              <el-input v-model="formGenerateUser.password_length"
-                        placeholder="Password Length"></el-input>
-            </el-form-item>
-          </el-col>
-        </el-row>
-
-        <el-form-item>
-          <el-button type="primary" @click="generateUser" icon="el-icon-fa-users" :loading="loadingGenerate">Generate & Export
-          </el-button>
-          <span class="userPreview" v-if="formGenerateUser.number_from && formGenerateUser.number_to &&
-                                          formGenerateUser.number_from <= formGenerateUser.number_to">
-            The usernames will be {{formGenerateUser.prefix + formGenerateUser.number_from + formGenerateUser.suffix}},
-            <span v-if="formGenerateUser.number_from + 1 < formGenerateUser.number_to">
-              {{formGenerateUser.prefix + (formGenerateUser.number_from + 1) + formGenerateUser.suffix + '...'}}
-            </span>
-            <span v-if="formGenerateUser.number_from + 1 <= formGenerateUser.number_to">
-              {{formGenerateUser.prefix + formGenerateUser.number_to + formGenerateUser.suffix}}
-            </span>
-          </span>
-        </el-form-item>
-      </el-form>
-    </Panel> -->
     <!--对话框-->
     <el-dialog :title="$t('m.User_Info')" :visible.sync="showUserDialog" :close-on-click-modal="false">
       <el-form :model="user" label-width="120px" label-position="left">
@@ -345,26 +240,6 @@
       handleSelectionChange (val) {
         this.selectedUsers = val
       },
-      // generateUser () {
-      //   this.$refs['formGenerateUser'].validate((valid) => {
-      //     if (!valid) {
-      //       this.$error('Please validate the error fields')
-      //       return
-      //     }
-      //     this.loadingGenerate = true
-      //     let data = Object.assign({}, this.formGenerateUser)
-      //     api.generateUser(data).then(res => {
-      //       this.loadingGenerate = false
-      //       let url = '/admin/generate_user?file_id=' + res.data.data.file_id
-      //       utils.downloadFile(url).then(() => {
-      //         this.$alert('All users created successfully, the users sheets have downloaded to your disk.', 'Notice')
-      //       })
-      //       this.getUserList(1)
-      //     }).catch(() => {
-      //       this.loadingGenerate = false
-      //     })
-      //   })
-      // },
       handleUsersCSV (file) {
         papa.parse(file, {
           complete: (results) => {
@@ -384,16 +259,6 @@
           }
         })
       },
-      // handleUsersUpload () {
-      //   api.importUsers(this.uploadUsers).then(res => {
-      //     this.getUserList(1)
-      //     this.handleResetData()
-      //   }).catch(() => {
-      //   })
-      // },
-      // handleResetData () {
-      //   this.uploadUsers = []
-      // }
     },
     computed: {
       selectedUserIDs () {

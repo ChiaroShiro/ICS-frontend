@@ -59,18 +59,6 @@ export default {
       data: profile
     })
   },
-  // freshDisplayID (userID) {
-  //   return ajax('profile/fresh_display_id', 'get', {
-  //     params: {
-  //       user_id: userID
-  //     }
-  //   })
-  // },
-  // twoFactorAuth (method, data) {
-  //   return ajax('two_factor_auth', method, {
-  //     data
-  //   })
-  // },
   tfaRequiredCheck (username) {
     return ajax('tfa_required', 'post', {
       data: {
@@ -81,13 +69,6 @@ export default {
   getSessions () {
     return ajax('sessions', 'get')
   },
-  // deleteSession (sessionKey) {
-  //   return ajax('sessions', 'delete', {
-  //     params: {
-  //       session_key: sessionKey
-  //     }
-  //   })
-  // },
   applyResetPassword (data) {
     return ajax('apply_reset_password', 'post', {
       data
@@ -244,16 +225,6 @@ export default {
       data
     })
   },
-  // getUserRank (offset, limit, rule = 'acm') {
-  //   let params = {
-  //     offset,
-  //     limit,
-  //     rule
-  //   }
-  //   return ajax('user_rank', 'get', {
-  //     params
-  //   })
-  // },
   getContestRank (params) {
     return ajax('contest_rank', 'get', {
       params

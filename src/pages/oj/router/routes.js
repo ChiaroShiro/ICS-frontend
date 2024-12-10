@@ -1,14 +1,10 @@
 // all routes here.
 import {
-  About,
-  ACMRank,
   Announcements,
   ApplyResetPassword,
-  FAQ,
   Home,
   Logout,
   NotFound,
-  OIRank,
   Problem,
   ProblemList,
   ResetPassword,
@@ -114,18 +110,6 @@ export default [
     ]
   },
   {
-    name: 'acm-rank',
-    path: '/acm-rank',
-    meta: {title: 'ACM Rankings'},
-    component: ACMRank
-  },
-  {
-    name: 'oi-rank',
-    path: '/oi-rank',
-    meta: {title: 'OI Rankings'},
-    component: OIRank
-  },
-  {
     name: 'user-home',
     path: '/user-home',
     component: UserHome,
@@ -154,18 +138,6 @@ export default [
         component: Setting.AccountSetting
       }
     ]
-  },
-  {
-    path: '/about',
-    name: 'about',
-    meta: {title: 'About'},
-    component: About
-  },
-  {
-    path: '/faq',
-    name: 'faq',
-    meta: {title: 'FAQ'},
-    component: FAQ
   },
   {
     path: '*',
